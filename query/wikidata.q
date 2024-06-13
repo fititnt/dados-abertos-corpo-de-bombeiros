@@ -1,23 +1,3 @@
-# dados-abertos-corpo-de-bombeiros
-Dados abertos sobre (estabelecimentos de) corpo de bombeiros no Brasil
-
-## TL;DR
-- https://overpass-turbo.eu/s/1MRO
-- https://w.wiki/ANuD
-
-## Fontes de dados
-
-### Governo
-
-> @TODO adicionar aqui
-
-### Wikies
-
-#### Wikidata
-
-- https://w.wiki/ANuD
-
-```
 # https://www.wikidata.org/wiki/Wikidata%3AWikiProject_Civil_Defense%2FList_of_firefighting_organizations%2FBrazil
 
 # instance_of=fire department (Q6498663); Brazil (Q155)
@@ -36,28 +16,3 @@ SELECT DISTINCT ?item ?itemLabel ?countryLabel ?jurisdictionLabel ?operating_are
 }
 ORDER BY (?countryLabel) (?jurisdictionLabel) (?operating_areaLabel)
 LIMIT 5000
-```
-
-#### OpenStreetMap
-
-- https://overpass-turbo.eu/s/1MRO
-
-```c
-[out:json][timeout:25];
-{{geocodeArea:Brazil}}->.searchArea;
-nwr["amenity"="fire_station"](area.searchArea);
-out meta;
-```
-
-
-<!--
-## Licenças
-
-### License
-
-[![Public Domain](https://i.creativecommons.org/p/zero/1.0/88x31.png)](UNLICENSE)
-
-To the extent possible under law, [Emerson Rocha](https://github.com/fititnt)
-has waived all copyright and related or neighboring rights to this work to
-[Public Domain](UNLICENSE).
--->
